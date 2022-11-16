@@ -1,0 +1,166 @@
+# Part 1 will illustrate code that I found useful or practiced with
+
+# The While Loop
+# We are able to set a statement as long as the condition is true
+# Useful when I was creaitng the ticketing system menu 
+
+#MENU
+i = True
+while i:
+    print("Hi. Welcome to the Help Desk.")
+    print("Please select from the following menu.")
+    print("Option 1 - Exit")
+    print("Option 2 - Submit Help Desk Ticket")
+    print("Option 3 - Show All Tickets")
+    print("Option 4 - Respond To Ticket By Number")
+    print("Option 5 - Re-open Resolved Ticket")
+    print("Option 6 - Display Ticket Stats")
+    option = input("Select option: ")
+
+    # Option 1 - Exit
+    if option == "1":
+        print("Thank you. Goodbye.")
+        i = False
+    # Option 2 - Submit Help Desk Ticket
+
+'''
+# When creating the ticketing system in assignment 3 I used Def reopen():
+# Method reopens past tickets that were logged
+# Good for practice and learning
+
+def reopen():
+    try:
+        ticket = input("Search for ticket: ")
+        ticket_number = int(ticket) - 2001
+        storage = list[ticket_number]
+    except:
+        print("Sorry. This ticket number does not exist.")
+    else:
+        print(storage.ticket_status)
+        reply = input("Do you want to reopen this ticket? YES or NO (case sensitive): ")
+        if reply == "YES":
+            reopen = "Reopen"
+            storage.change_status(reopen)
+         
+# The def display_ticket(self) followed a while loop strcuture for the output
+# Loop runs through each lime
+# And prints element along with a heading 
+# Index then cycles through to another ticket once done
+            
+def display():
+    resolve = 0
+    unresolved = 0
+    created = 0
+    for i in list:
+        created += 1
+        if i.ticket_status == 'Status: Closed':
+            resolve += 1
+        elif i.ticket_status == 'Status: Open':
+            unresolved +=1
+        elif i.ticket_status == 'Status: Reopen':
+            unresolved +=1
+    print("Resolved tickets: " + str(resolve))
+    print("Unresolved tickets: " + str(unresolved))
+    print("Created tickets: " + str(created))
+
+#  Part 2 will illustrate Code that I found difficult to understand 
+
+# Allows the system to promt a action when initial action cannot proceed
+# The code looks simple to understand but can be confusing
+# Would be good to practice with more IF statements to better my learning
+
+def request_ticket():
+    print("Are you a current staff member? ")
+    request1 = input("Please type YES or NO (case sensitive): ")
+
+    if request1 == 'NO':
+        print("Sorry. You do not have access to this option.")
+        print("Please contact your supervisor for assistance.")
+
+    elif request1 == 'YES':
+        global ticket_counter
+        ticket_counter += 1
+        # Ticket Information Required
+        print("Please enter the following details")
+        name = input("Staff Full Name: ")
+        ID = input("Staff_ID: ")
+        email = input("Contact_Email: ")
+        issue = input("Description_Of_Issue: ")
+        response = "Not yet provided"
+        ticket_number = ticket_counter
+        ticket_status = "Open"
+        if issue == "password change":
+            response = "Your new password is: " + ID[0:2] + name[0:3]
+            ticket_status = "Closed"
+            print(response)
+        info = Request(name, ID, email, issue, response, ticket_number, ticket_status)
+        list.append(info)
+
+        print("Thank you. Your request has been submitted.")
+        print("You have been assigned the ticket number - ", ticket_number)
+        if request1 == 'NO':
+            print("Thank you. Goodbye.")
+            
+# Searching strings
+# To understand how to use this functon to search a string
+
+string_1 = "here is a translation: Haera mai ki konei means come here!"
+ 
+print("The number of times that k appears is {0}\n"
+      .format(string_1.count("k")))
+ 
+konei_endindex = string_1.find("konei") + len("konei")
+print("The end index position of konei is {0}\n"
+      .format(konei_endindex))
+ 
+here_position = string_1.find("here", konei_endindex, len(string_1))
+print("Looking for the string_1 here, anytime after konei...\n\n"
+      "The string_1 here appears at index position..{0}"
+      .format(here_position))
+      
+      The number of times that k appears is 2
+ 
+The end index position of konei is 41
+ 
+Looking for the word here, anytime after konei...
+ 
+The word here appears at index position..53
+
+# Part 3 Code that I found interesting 
+
+# Graphics with Python
+# A program to make spiral graphics with turtle python
+
+import random
+import turtle
+colors = ['red','cyan','pink' ,'yellow', 'green','orange']
+t = turtle.Turtle()
+t.speed(10)
+turtle.bgcolor("black")
+length=100
+angle =50
+size=5
+for i in range(length):
+    color=random.choice(colors)
+    t.pencolor(color)
+    t.fillcolor(color)
+    t.penup()
+    t.forward(i+50)
+    t.pendown()
+    t.left(angle)
+    t.begin_fill()
+    t.circle(size)
+    t.end_fill()
+turtle.exitonclick()
+turtle.bgcolor("black")                                                                    
+ 
+ # Take a screenshot 
+ # A program to take a screenshot of the screen with python
+ 
+ import pyautogui
+screenshot = pyautogui.screenshot()
+screenshot.save("screenshot.png")                                                 
+
+
+
+
